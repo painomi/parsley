@@ -30,6 +30,8 @@ gem 'i18n_generators'          # locale ファイル生成
 gem 'i18n-tasks'               # locale ファイルの整理整頓
 gem 'enum_help'                # enum の i18n
 
+gem 'acts-as-taggable-on' # タグ付け
+
 # Authentication
 gem 'omniauth'
 gem 'omniauth-google-oauth2'

@@ -10,6 +10,10 @@
     = f.association :composer
     = f.association :arranger
 
+    .field.form-group.form-group-lg
+      = f.label :tag_list, class: 'sr-only control-label'
+      = f.text_field :tag_list, value: @song.tag_list.join(","), class: 'form-control'
+
   .form-actions
     = f.button :submit
     - if @song.persisted?

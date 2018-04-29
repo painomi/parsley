@@ -1,4 +1,5 @@
 class Song < ApplicationRecord
+  acts_as_taggable
   validates :name, presence: true
 
   belongs_to :lyricist, class_name: 'Person'
