@@ -1,0 +1,16 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.show') }
+
+- if notice.present?
+  %div.alert.alert-success.alert-dismissible.fade.show#notice{role: 'alert'}
+    = notice
+    %button.close{ type:"button", 'data-dismiss':"alert", 'aria-label':"Close"}
+      %span{'aria-hidden':"true"} &times;
+
+<% for attribute in attributes -%>
+%dl.row
+  %dt.col-sm-12.text-secondary= <%= class_name %>.human_attribute_name(:<%= attribute.name %>)
+  %dd.col-sm-12= @<%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+
+= link_to t('view.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-primary'
+= link_to t('view.back'), <%= index_helper %>_path, class: 'btn btn-primary'

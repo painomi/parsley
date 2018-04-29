@@ -1,0 +1,15 @@
+-# frozen_string_literal: true
+- page_name= @<%= singular_table_name %>.persisted? ? t('view.edit') : t('view.new')
+= render partial: 'breadcrumb', locals: { page_name: page_name }
+
+= simple_form_for(@<%= singular_table_name %>) do |f|
+  .form-inputs
+  <%- attributes.each do |attribute| -%>
+    = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
+  <%- end -%>
+
+  .form-actions
+    = f.button :submit
+    - if @<%= singular_table_name %>.persisted?
+      = link_to t('view.show'), @<%= singular_table_name %>, class: 'btn btn-primary'
+    = link_to t('view.back'), <%= index_helper %>_path, class: 'btn btn-primary'

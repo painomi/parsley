@@ -19,6 +19,8 @@ Bundler.require(*Rails.groups)
 
 module Parsley
   class Application < Rails::Application
+    config.i18n.default_locale = :ja
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -29,5 +31,11 @@ module Parsley
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.assets            false
+      g.helper            false
+      g.jbuilder          false
+    end
   end
 end

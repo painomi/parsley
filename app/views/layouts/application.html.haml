@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Songs
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container-fluid
+      %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        .collapse.navbar-collapse
+          %ul.navbar-nav
+            %li.nav-item
+              %a.nav-link.active{href: '#'} Active
+            %li.nav-item
+              %a.nav-link{href: '#'} Link
+            %li.nav-item
+              %a.nav-link{href: '#'} Link
+            %li.nav-item
+              %a.nav-link{href: '#'} Link
+      = yield
