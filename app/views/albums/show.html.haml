@@ -1,0 +1,32 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.show') }
+
+- if notice.present?
+  %div.alert.alert-success.alert-dismissible.fade.show#notice{role: 'alert'}
+    = notice
+    %button.close{ type:"button", 'data-dismiss':"alert", 'aria-label':"Close"}
+      %span{'aria-hidden':"true"} &times;
+
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:name)
+  %dd.col-sm-12= @album.name
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:description)
+  %dd.col-sm-12= @album.description
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:artist)
+  %dd.col-sm-12= @album.artist
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:publish_at)
+  %dd.col-sm-12= @album.publish_at
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:media_type)
+  %dd.col-sm-12= @album.media_type
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:release_type)
+  %dd.col-sm-12= @album.release_type
+%dl.row
+  %dt.col-sm-12.text-secondary= Album.human_attribute_name(:production_type)
+  %dd.col-sm-12= @album.production_type
+
+= link_to t('view.edit'), edit_album_path(@album), class: 'btn btn-primary'
+= link_to t('view.back'), albums_path, class: 'btn btn-primary'

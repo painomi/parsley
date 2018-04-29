@@ -1,0 +1,13 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.index') }
+
+%div.list-group
+  - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+    %div.list-group-item
+      %h5= <%= singular_table_name %>.name
+      %div.small= <%= singular_table_name %>.description
+      = link_to t('view.show'), <%= singular_table_name %>, class: 'btn btn-primary'
+      = link_to t('view.edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-primary'
+      = link_to t('view.destroy'), <%= singular_table_name %>, method: :delete, data: { confirm: t('messages.are_you_sure_to_delete') }, class: 'btn btn-primary'
+
+%br
+= link_to t('view.new'), new_<%= singular_table_name %>_path, class: 'btn btn-primary'

@@ -7,7 +7,7 @@ development:
   <<: *default
   database: parsley_development
   username: <%= ENV['PARSLEY_DEVELOPMENT_DB_USERNAME'] %>
-  password: <%= ENV['PARSELY_DEVELOPMENT_DB_PASSWORD'] %>
+  password: <%= ENV['PARSLEY_DEVELOPMENT_DB_PASSWORD'] %>
   host: <%= ENV['PARSLEY_DEVELOPMENT_DB_HOST'] %>
   port: 5432
 

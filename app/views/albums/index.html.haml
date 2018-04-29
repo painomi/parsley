@@ -1,0 +1,13 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.index') }
+
+%div.list-group
+  - @albums.each do |album|
+    %div.list-group-item
+      %h5= album.name
+      %div.small= album.description
+      = link_to t('view.show'), album, class: 'btn btn-primary'
+      = link_to t('view.edit'), edit_album_path(album), class: 'btn btn-primary'
+      = link_to t('view.destroy'), album, method: :delete, data: { confirm: t('messages.are_you_sure_to_delete') }, class: 'btn btn-primary'
+
+%br
+= link_to t('view.new'), new_album_path, class: 'btn btn-primary'

@@ -1,0 +1,43 @@
+ja:
+  activerecord:
+    models:
+      person: 人物
+      song: 曲
+      album: アルバム
+    attributes:
+      person:
+        description: 説明
+        name: 名前
+      song:
+        name: 曲名
+        description: 説明
+        lyricist: 作詞
+        composer: 作曲
+        arranger: 編曲
+      album:
+        name: アルバムタイトル
+        description: 説明
+        artist: アーティスト
+        publish_at: 発行日
+        media_type: 媒体種別
+        release_type: 発行種別
+        production_type: 制作種別
+  enums:
+    album:
+      media_type:
+        cd: コンパクトディスク
+        lp: レコード
+        ct: カセットテープ
+        cds: コンパクトディスク（シングル）
+        ep: レコード（シングル）
+        cts: カセットテープ（シングル）
+        ss: ソノシート
+        c8t: カートリッジテープ(8トラック)
+        bscd: ブルースペックCD
+      release_type:
+        album: アルバム
+        single: シングル
+      production_type:
+        studio_album: アルバム
+        live_album: ライブ・アルバム
+        omnibus: オムニバス
