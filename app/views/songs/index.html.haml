@@ -1,0 +1,13 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.index') }
+
+%div.list-group
+  - @songs.each do |song|
+    %div.list-group-item
+      %h5= song.name
+      %div.small= song.description
+      = link_to t('view.show'), song, class: 'btn btn-primary'
+      = link_to t('view.edit'), edit_song_path(song), class: 'btn btn-primary'
+      = link_to t('view.destroy'), song, method: :delete, data: { confirm: t('messages.are_you_sure_to_delete') }, class: 'btn btn-primary'
+
+%br
+= link_to t('view.new'), new_song_path, class: 'btn btn-primary'

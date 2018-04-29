@@ -1,0 +1,26 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.show') }
+
+- if notice.present?
+  %div.alert.alert-success.alert-dismissible.fade.show#notice{role: 'alert'}
+    = notice
+    %button.close{ type:"button", 'data-dismiss':"alert", 'aria-label':"Close"}
+      %span{'aria-hidden':"true"} &times;
+
+%dl.row
+  %dt.col-sm-12.text-secondary= Song.human_attribute_name(:name)
+  %dd.col-sm-12= @song.name
+%dl.row
+  %dt.col-sm-12.text-secondary= Song.human_attribute_name(:description)
+  %dd.col-sm-12= @song.description
+%dl.row
+  %dt.col-sm-12.text-secondary= Song.human_attribute_name(:lyricist)
+  %dd.col-sm-12= @song.lyricist
+%dl.row
+  %dt.col-sm-12.text-secondary= Song.human_attribute_name(:composer)
+  %dd.col-sm-12= @song.composer
+%dl.row
+  %dt.col-sm-12.text-secondary= Song.human_attribute_name(:arranger)
+  %dd.col-sm-12= @song.arranger
+
+= link_to t('view.edit'), edit_song_path(@song), class: 'btn btn-primary'
+= link_to t('view.back'), songs_path, class: 'btn btn-primary'

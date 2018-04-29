@@ -1,0 +1,5 @@
+.nested-fields.row
+  .col-1= f.input :number, label: false
+  .col-4= f.input :song, label: false, collection: Song.all.pluck(:name, :id), include_blank: false
+  .col-5= f.input :description, label: false
+  .col-1= link_to_remove_association t('view.destroy'), f, class: 'btn btn-primary'

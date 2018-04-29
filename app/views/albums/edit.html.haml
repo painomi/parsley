@@ -1,0 +1,19 @@
+-# frozen_string_literal: true
+- page_name= @album.persisted? ? t('view.edit') : t('view.new')
+= render partial: 'breadcrumb', locals: { page_name: page_name }
+
+= simple_form_for(@album) do |f|
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.association :artist
+    = f.input :publish_at
+    = f.input :media_type
+    = f.input :release_type
+    = f.input :production_type
+
+  .form-actions
+    = f.button :submit
+    - if @album.persisted?
+      = link_to t('view.show'), @album, class: 'btn btn-primary'
+    = link_to t('view.back'), albums_path, class: 'btn btn-primary'

@@ -1,0 +1,17 @@
+-# frozen_string_literal: true
+- page_name= @song.persisted? ? t('view.edit') : t('view.new')
+= render partial: 'breadcrumb', locals: { page_name: page_name }
+
+= simple_form_for(@song) do |f|
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.association :lyricist
+    = f.association :composer
+    = f.association :arranger
+
+  .form-actions
+    = f.button :submit
+    - if @song.persisted?
+      = link_to t('view.show'), @song, class: 'btn btn-primary'
+    = link_to t('view.back'), songs_path, class: 'btn btn-primary'
