@@ -1,24 +1,8 @@
-# README
+# Parsley
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+谷山浩子資料館 on Rails のためのお試しプロジェクト
 
-Things you may want to cover:
 
-* Ruby version
+# 履歴
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 2018/04/29 rails new
