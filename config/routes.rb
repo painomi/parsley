@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   resources :albums
   resources :songs
   resources :people
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+  namespace :api do
+    resources :rates, only: [:show, :create, :destroy]
+  end
 end
