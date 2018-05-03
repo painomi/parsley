@@ -4,6 +4,7 @@ ja:
       person: 人物
       song: 曲
       album: アルバム
+      user: ユーザー
     attributes:
       person:
         description: 説明
@@ -22,6 +23,9 @@ ja:
         media_type: 媒体種別
         release_type: 発行種別
         production_type: 制作種別
+      user:
+        name: 名前
+        provider: プロバイダー
   enums:
     album:
       media_type:

@@ -1,0 +1,20 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.show') }
+
+- if notice.present?
+  %div.alert.alert-success.alert-dismissible.fade.show#notice{role: 'alert'}
+    = notice
+    %button.close{ type:"button", 'data-dismiss':"alert", 'aria-label':"Close"}
+      %span{'aria-hidden':"true"} &times;
+
+%dl.row
+  %dt.col-sm-12.text-secondary= User.human_attribute_name(:name)
+  %dd.col-sm-12= @user.name
+%dl.row
+  %dt.col-sm-12.text-secondary= User.human_attribute_name(:email)
+  %dd.col-sm-12= @user.email
+%dl.row
+  %dt.col-sm-12.text-secondary= User.human_attribute_name(:provider)
+  %dd.col-sm-12= @user.provider
+
+= link_to t('view.edit'), edit_user_path(@user), class: 'btn btn-primary'
+= link_to t('view.back'), users_path, class: 'btn btn-primary'
