@@ -1,0 +1,2 @@
+class AlbumsLoyalty < ApplicationLoyalty
+end

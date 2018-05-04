@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :uid, presence: true
   validates :name, presence: true
   validates_uniqueness_of :uid, scope: :provider
-  enum role: { common: 0 }
+  enum role: { common: 0, editor:50 , admin: 90 }
 
   def self.create_with_omniauth(auth)
     user= create! do |user|

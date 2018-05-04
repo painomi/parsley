@@ -33,7 +33,7 @@ gem 'enum_help'                # enum の i18n
 # Authentication
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'pundit'
+gem 'banken'
 
 # Uploader
 gem 'carrierwave'              # 画像アップローダ
