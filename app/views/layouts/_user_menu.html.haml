@@ -1,0 +1,12 @@
+- user= current_user[:user]
+%li.nav-item.dropdown
+  %a.nav-link.dropdown-toggle{ href: '#', id: 'navbarDropdown', role: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false'}
+    - if user
+      = image_tag user.image_url, { size: '32x32' }
+    - else
+      Login
+  .dropdown-menu{ 'aria-labelledby': 'navbarDropdown' }
+    - if user
+      = link_to 'Logout', '/signout', { class: 'dropdown-item' }
+    - else
+      = link_to 'Google', '/auth/google/', { class: 'dropdown-item' }

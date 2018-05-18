@@ -1,0 +1,2 @@
+class SongsLoyalty < ApplicationLoyalty
+end

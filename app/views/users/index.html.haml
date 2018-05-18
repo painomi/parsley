@@ -1,0 +1,11 @@
+= render partial: 'breadcrumb', locals: { page_name: t('view.index') }
+
+%div.list-group
+  - @users.each do |user|
+    %div.list-group-item
+      %h5= user.name
+      %div.small= user.provider
+      %div.small= user.email
+      = link_to t('view.show'), user, class: 'btn btn-primary'
+      = link_to t('view.edit'), edit_user_path(user), class: 'btn btn-primary'
+      = link_to t('view.destroy'), user, method: :delete, data: { confirm: t('messages.are_you_sure_to_delete') }, class: 'btn btn-primary'

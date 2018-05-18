@@ -1,0 +1,19 @@
+-# frozen_string_literal: true
+- page_name= @user.persisted? ? t('view.edit') : t('view.new')
+= render partial: 'breadcrumb', locals: { page_name: page_name }
+
+= simple_form_for(@user) do |f|
+  .form-inputs
+    = f.input :name, disabled: true
+    = f.input :email, disabled: true
+    = f.input :provider, disabled: true
+    = f.input :image_url, disabled: true
+    = f.input :role
+    = f.input :created_at, disabled: true
+    = f.input :updated_at, disabled: true
+
+  .form-actions
+    = f.button :submit
+    - if @user.persisted?
+      = link_to t('view.show'), @user, class: 'btn btn-primary'
+    = link_to t('view.back'), users_path, class: 'btn btn-primary'
