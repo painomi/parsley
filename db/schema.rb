@@ -94,4 +94,18 @@ ActiveRecord::Schema.define(version: 2018_04_30_030700) do
     t.index ["song_id"], name: "index_tracks_on_song_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "image_url"
+    t.string "email"
+    t.string "token"
+    t.string "role", default: "0"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
+  end
+
 end
